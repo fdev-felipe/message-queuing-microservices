@@ -1,0 +1,29 @@
+version: "3"
+services:
+  api_admin:
+    build:
+      context: ./api_service
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./api_service:/api_service
+    command: >
+          sh -c "python3 manage.py makemigrations &&
+                 python3 manage.py migrate &&
+                 python3 manage.py runserver 0.0.0.0:8000"
+
+  stock_service:
+    build:
+      context: ./stock_service
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./stock_service:/stock_service
+    command: "python3 manage.py runserver 0.0.0.0:8080"
+
+  queue:
+    build:
+      context: ./stock_service
+    volumes:
+      - ./stock_service:/stock_service
+    command: "python3 consumer.py"
