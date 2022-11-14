@@ -27,8 +27,8 @@ For simplicity, both services will share the same dependencies (requirements.txt
 ```
   {
     "first_name": "Felipe",
-    "last_name": "Sá",
-    "email": "safelipesa@gmail.com",
+    "last_name": "test",
+    "email": "felipe@gmail.com",
     "password": "1234",
     "password_confirm": "1234",
     "is_superuser": true
@@ -39,8 +39,8 @@ For simplicity, both services will share the same dependencies (requirements.txt
     {
     "id": 16,
     "first_name": "Felipe",
-    "last_name": "Sá",
-    "email": "safelipesa@gmail.com",
+    "last_name": "test",
+    "email": "felipe@gmail.com",
     "is_superuser": true
   } 
   ```
@@ -50,7 +50,7 @@ For simplicity, both services will share the same dependencies (requirements.txt
 `POST /login`
 ```
   {
-    "email": "safelipesa@gmail.com",
+    "email": "felipe@gmail.com",
     "password": "1234",
   }
   ```
